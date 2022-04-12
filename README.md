@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DEVIN NextJS Template
 
-## Getting Started
+> Helping when start new frontend project
 
-First, run the development server:
+This is NextJS with React 18 template, which support auto format with eslint and intergrate `husky` for code checking before commit. This will help in smooth out project building.
 
-```bash
-npm run dev
-# or
-yarn dev
+## Project detail
+
+### Commands
+
+- Run: `yarn install` for install all packages
+- Run: `yarn dev` for start dev environment
+- Run: `yarn build` for build your project
+- Run: `yarn start` for start your built project
+- Run: `yarn lint` for checking error and fix it
+
+### Project structure
+
+```
+├── apis                # All apis come here
+├── components          # All components that can share between screen
+│   └── _template       # Template for component
+├── configs             # All configs and constant goes here
+├── hooks               # Custom hooks for project
+├── layouts             # Layouts of screen and components
+├── pages               # Page file of NextJS (Use as router to screen folder)
+├── public              # Public folder, contain static files
+│   └── locales         # I18N Language files
+│       ├── en
+│       └── vi
+├── screens             # Screen component goes here
+├── services            # All services goes here
+├── states              # State managerment for app
+│   └── atoms           # Recoil's atom states (for app state)
+├── styles              # App global styles (SCSS)
+├── types               # App global type (Typescript)
+└── utils               # App's utils
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Some code rule
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Component that belong only to screen, should be placed on that screen's folder
+- App's state should using Recoil, state relate to API should using Redux
+- Function that can be used many time should place in utils or hooks if relate to state
+- HOC placed in `layouts` have prefix `*HOC` like `AuthenticationHOC`
+- Layout placed in `layouts` and have prefix `*Layout` like `MainLayout` or `DefaultLayout`
+- All atom from recoil should have prefix `*Atom` like `DarkmodeAtom`
+- All config export from configs folder should have export prefix `*Config` like `BaseConfig` or `ApiConfig`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Tech included
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `NextJS + Typescript` Base source
+- `RecoilJS` State managerment
+- `Husky` Git helper
+- `SCSS modules` Style system
+- `Eslint and Prettier` Rule of code
