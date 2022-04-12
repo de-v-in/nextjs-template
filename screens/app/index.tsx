@@ -1,5 +1,6 @@
 import { DarkmodeAtom } from "@atoms/app";
 import { TemplateComponent } from "@components/_template";
+import { TEAM_NAME } from "@env";
 import { cx } from "@utils/tools";
 import Head from "next/head";
 import Image from "next/image";
@@ -27,7 +28,7 @@ export const AppScreen: IComponent = ({}) => {
             text="Welcome to"
             color={darkMode === "dark" ? "white" : "black"}
           />
-          <a href="https://nextjs.org">{t("title")}</a>
+          <a href="https://nextjs.org">{t("title", { name: TEAM_NAME })}</a>
         </div>
 
         <button
