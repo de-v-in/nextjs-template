@@ -19,13 +19,13 @@ export const AppScreen: IComponent = ({}) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <div className={styles.title}>
           <TemplateComponent
             text="Welcome to"
             color={darkMode === "dark" ? "white" : "black"}
           />
           <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </div>
 
         <button
           onClick={() =>
