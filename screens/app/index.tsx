@@ -1,14 +1,17 @@
-import { atomDarkMode } from "@atoms/app";
+import { DarkmodeAtom } from "@atoms/app";
 import { TemplateComponent } from "@components/_template";
 import { cx } from "@utils/tools";
 import Head from "next/head";
 import Image from "next/image";
+import setLanguage from "next-translate/setLanguage";
+import useTranslation from "next-translate/useTranslation";
 import { useRecoilState } from "recoil";
 
 import styles from "./styles.module.scss";
 
 export const AppScreen: IComponent = ({}) => {
-  const [darkMode, setDarkMode] = useRecoilState(atomDarkMode);
+  const { t, lang } = useTranslation("common");
+  const [darkMode, setDarkMode] = useRecoilState(DarkmodeAtom);
 
   return (
     <div className={cx(styles.container, "dark:text-white")}>
@@ -24,7 +27,7 @@ export const AppScreen: IComponent = ({}) => {
             text="Welcome to"
             color={darkMode === "dark" ? "white" : "black"}
           />
-          <a href="https://nextjs.org">Next.js!</a>
+          <a href="https://nextjs.org">{t("title")}</a>
         </div>
 
         <button
@@ -34,6 +37,13 @@ export const AppScreen: IComponent = ({}) => {
           className="active:scale-75 ease-in-out duration-500 rounded-full bg-blue-400 text-white p-2 mt-3"
         >
           Change Dark Mode
+        </button>
+
+        <button
+          onClick={() => setLanguage(lang === "vi" ? "en" : "vi")}
+          className="active:scale-75 ease-in-out duration-500 rounded-full bg-teal-600 text-white p-2 mt-3"
+        >
+          Change Language
         </button>
 
         <p className={styles.description}>

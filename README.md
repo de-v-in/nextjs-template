@@ -20,14 +20,14 @@ This is NextJS with React 18 template, which support auto format with eslint and
 ├── apis                # All apis come here
 ├── components          # All components that can share between screen
 │   └── _template       # Template for component
+├── locales             # I18N Language files
+│   ├── en
+│   └── vi
 ├── configs             # All configs and constant goes here
 ├── hooks               # Custom hooks for project
 ├── layouts             # Layouts of screen and components
 ├── pages               # Page file of NextJS (Use as router to screen folder)
 ├── public              # Public folder, contain static files
-│   └── locales         # I18N Language files
-│       ├── en
-│       └── vi
 ├── screens             # Screen component goes here
 ├── services            # All services goes here
 ├── states              # State managerment for app
