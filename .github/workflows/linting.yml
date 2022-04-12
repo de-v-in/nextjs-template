@@ -32,5 +32,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Lint
-        uses: Krizzu/eslint-check-action@v1.1.0
+      - name: Run Eslint Checking
+        run: eslint . --ext .js,.jsx,.ts,.tsx
