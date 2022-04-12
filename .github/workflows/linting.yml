@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: Install Yarn & Eslint
+        run: npm install -g yarn eslint
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
