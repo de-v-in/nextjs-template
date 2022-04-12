@@ -1,3 +1,5 @@
+const hoistNonReactStatics = require("hoist-non-react-statics");
+
 /**
  * Read more here: https://github.com/vinissimus/next-translate
  */
@@ -7,6 +9,7 @@ const i18n = {
   pages: {
     "*": ["common"],
   },
+  staticsHoc: hoistNonReactStatics,
 };
 
 module.exports = i18n;
