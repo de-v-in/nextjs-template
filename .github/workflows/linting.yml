@@ -34,7 +34,6 @@ jobs:
 
       - name: Install Dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        working-directory: ./js-build
         run: yarn
 
       - name: Run Eslint Checking
