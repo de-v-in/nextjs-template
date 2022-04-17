@@ -4,6 +4,7 @@ import { TEAM_NAME } from "@env";
 import { cx } from "@utils/tools";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import setLanguage from "next-translate/setLanguage";
 import useTranslation from "next-translate/useTranslation";
 import { useRecoilState } from "recoil";
@@ -13,6 +14,7 @@ import styles from "./styles.module.scss";
 export const AppScreen: IComponent = ({}) => {
   const { t, lang } = useTranslation("common");
   const [darkMode, setDarkMode] = useRecoilState(DarkmodeAtom);
+  const router = useRouter();
 
   return (
     <div className={cx(styles.container, "dark:text-white")}>
@@ -45,6 +47,12 @@ export const AppScreen: IComponent = ({}) => {
           className="active:scale-75 ease-in-out duration-500 rounded-full bg-teal-600 text-white p-2 mt-3"
         >
           Change Language
+        </button>
+        <button
+          className="active:scale-75 ease-in-out duration-500 rounded-full bg-green-600 text-white p-2 mt-3"
+          onClick={() => router.push("/about")}
+        >
+          GO TO ABOUT
         </button>
 
         <p className={styles.description}>
