@@ -1,19 +1,18 @@
-import { DarkmodeAtom } from "@atoms/app";
 import { TemplateComponent } from "@components/_template";
 import { TEAM_NAME } from "@env";
+import { useAppStore } from "@states/app";
 import { cx } from "@utils/tools";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import setLanguage from "next-translate/setLanguage";
 import useTranslation from "next-translate/useTranslation";
-import { useRecoilState } from "recoil";
 
 import styles from "./styles.module.scss";
 
 export const AppScreen: IComponent = () => {
   const { t, lang } = useTranslation("common");
-  const [darkMode, setDarkMode] = useRecoilState(DarkmodeAtom);
+  const { darkMode, setDarkMode } = useAppStore();
   const router = useRouter();
 
   return (
@@ -34,9 +33,7 @@ export const AppScreen: IComponent = () => {
         </div>
 
         <button
-          onClick={() =>
-            setDarkMode((mode) => (mode === "dark" ? "light" : "dark"))
-          }
+          onClick={() => setDarkMode(darkMode === "dark" ? "light" : "dark")}
           className="active:scale-75 ease-in-out duration-500 rounded-full bg-blue-400 text-white p-2 mt-3"
         >
           Change Dark Mode

@@ -1,16 +1,15 @@
-import { DarkmodeAtom } from "@atoms/app";
+import { useAppStore } from "@states/app";
 import { cx } from "@utils/tools";
-import { useRecoilValue } from "recoil";
 
 export const MainLayout: IComponent = ({ children }) => {
   // Manual switch darkmode with state
-  const darkmode = useRecoilValue(DarkmodeAtom);
+  const { darkMode } = useAppStore();
 
   return (
     <div
       className={cx(
         {
-          dark: darkmode === "dark",
+          dark: darkMode === "dark",
         },
         "w-full h-full"
       )}

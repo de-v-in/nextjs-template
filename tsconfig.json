@@ -29,8 +29,7 @@
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
       "@types/*": ["types/*"],
-      "@redux/*": ["states/redux/*"],
-      "@atoms/*": ["states/atoms/*"],
+      "@states/*": ["states/*"],
       "@styles/*": ["styles/*"]
     }
   },
