@@ -1,7 +1,7 @@
 import { DefaultLayout } from "@layouts/DefaultLayout";
 import { useRouter } from "next/router";
 
-const About: IPageComponent = ({}) => {
+const About: IPageComponent = () => {
   const router = useRouter();
   return (
     <div className="w-full h-full justify-center items-center flex">

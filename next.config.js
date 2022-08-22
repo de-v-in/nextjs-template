@@ -5,6 +5,7 @@ const intercept = require("intercept-stdout");
 const nextConfig = nextTranslate({
   reactStrictMode: true,
   swcMinify: true,
+  output: "standalone",
   publicRuntimeConfig: {
     TEAM_NAME: process.env.TEAM_NAME || "UNKNOWN",
     IS_DEV: process.env.NODE_ENV !== "production",

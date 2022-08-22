@@ -11,7 +11,7 @@ import { useRecoilState } from "recoil";
 
 import styles from "./styles.module.scss";
 
-export const AppScreen: IComponent = ({}) => {
+export const AppScreen: IComponent = () => {
   const { t, lang } = useTranslation("common");
   const [darkMode, setDarkMode] = useRecoilState(DarkmodeAtom);
   const router = useRouter();

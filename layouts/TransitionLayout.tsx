@@ -10,7 +10,7 @@ type TransitionKind<RC> = {
   location: string;
 };
 
-const TIMEOUT: number = 200;
+const TIMEOUT = 200;
 
 type TTransitionStyles = {
   [key in TransitionStatus]?: {
