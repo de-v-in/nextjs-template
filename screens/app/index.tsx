@@ -1,5 +1,4 @@
 import { TemplateComponent } from "@components/_template";
-import { TEAM_NAME } from "@env";
 import { useAppStore } from "@states/app";
 import { cx } from "@utils/tools";
 import Head from "next/head";
@@ -29,7 +28,9 @@ export const AppScreen: IComponent = () => {
             text="Welcome to"
             color={darkMode === "dark" ? "white" : "black"}
           />
-          <a href="https://nextjs.org">{t("title", { name: TEAM_NAME })}</a>
+          <a href="https://nextjs.org">
+            {t("title", { name: "DEVIN Template" })}
+          </a>
         </div>
 
         <button

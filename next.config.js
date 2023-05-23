@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextTranslate = require("next-translate");
+const nextTranslate = require("next-translate-plugin");
 const intercept = require("intercept-stdout");
 
 const nextConfig = nextTranslate({
@@ -7,7 +7,6 @@ const nextConfig = nextTranslate({
   swcMinify: true,
   output: "standalone",
   publicRuntimeConfig: {
-    TEAM_NAME: process.env.TEAM_NAME || "UNKNOWN",
     IS_DEV: process.env.NODE_ENV !== "production",
   },
 });

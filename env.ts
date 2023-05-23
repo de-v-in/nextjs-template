@@ -4,16 +4,15 @@
  */
 
 import getConfig from "next/config";
+import { z } from "zod";
 
-interface IRuntimeConfig {
-  IS_DEV: boolean;
-  TEAM_NAME: string;
-}
+const SystemENVParser = z.object({
+  IS_DEV: z.boolean(),
+});
 
 const { publicRuntimeConfig } = getConfig();
 
 /**
  * True if running in production
  */
-export const { IS_DEV = false, TEAM_NAME } =
-  publicRuntimeConfig as IRuntimeConfig;
+export const ProjectENV = SystemENVParser.parse(publicRuntimeConfig);
