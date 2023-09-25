@@ -1,12 +1,10 @@
-import styles from "./styles.module.scss";
+import { cx } from '@utils/tools';
+
+import styles from './styles.module.scss';
 
 export const TemplateComponent: IComponent<{
-  color?: string;
   text: string;
-}> = ({ color = "black", text }) => {
-  return (
-    <h1 className={styles.text} style={{ color }}>
-      {text}
-    </h1>
-  );
+  className?: string;
+}> = ({ className = 'text-black', text }) => {
+  return <h1 className={cx(styles.text, className)}>{text}</h1>;
 };

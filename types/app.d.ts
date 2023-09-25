@@ -1,1 +1,1 @@
-type TDarkModeStatus = "dark" | "light" | "auto";
+type TDarkModeStatus = 'dark' | 'light' | 'auto';

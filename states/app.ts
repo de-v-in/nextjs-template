@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 interface IAppState {
   darkMode: TDarkModeStatus;
@@ -6,7 +6,7 @@ interface IAppState {
 }
 
 const useAppStore = create<IAppState>((set) => ({
-  darkMode: "auto",
+  darkMode: 'auto',
   setDarkMode: (mode) => {
     set({ darkMode: mode });
   },

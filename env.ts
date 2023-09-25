@@ -3,8 +3,8 @@
  * Flow: Add into .env => bind into next.config => export in env.ts
  */
 
-import getConfig from "next/config";
-import { z } from "zod";
+import getConfig from 'next/config';
+import { z } from 'zod';
 
 const SystemENVParser = z.object({
   IS_DEV: z.boolean(),

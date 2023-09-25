@@ -14,3 +14,5 @@ interface IPageComponent<T = {}> extends IComponent<T> {
   getLayout?: TGetLayout;
 }
 type ISvgComponent<T = {}> = IComponent<ISvgComponentProps & T>;
+
+type TAny = ReturnType<JSON.values>;

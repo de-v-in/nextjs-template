@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 /**
  * Mapping hotkey into className package for better usage
