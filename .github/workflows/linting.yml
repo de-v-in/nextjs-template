@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Yarn & Eslint
+      - name: Install PNPM & Eslint
         run: npm install -g pnpm eslint
 
       - name: Get pnpm store directory
