@@ -2,8 +2,8 @@
 const intercept = require('intercept-stdout');
 
 const nextConfig = {
-  reactStrictMode: true,
   output: 'standalone',
+  reactStrictMode: true,
 };
 
 /**

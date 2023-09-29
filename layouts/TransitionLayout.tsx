@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
-export const TransitionLayout: IComponent<{ id?: string }> = ({ id, children }) => {
+export const TransitionLayout: IComponent<{ id?: string }> = ({ children, id }) => {
   const pathname = usePathname();
 
   const simplePathname = id ?? pathname?.split('/')[2];
